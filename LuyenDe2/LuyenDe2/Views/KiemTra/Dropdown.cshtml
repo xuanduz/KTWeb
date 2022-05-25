@@ -1,0 +1,52 @@
+﻿@model List<LuyenDe2.Models.Category>
+
+
+<select id="country1" onchange="getProductByCategory()" class="frm-field required sect">
+    <option value="all"><i class="fa fa-arrow-right" aria-hidden="true"></i>All</option>
+    @{
+        foreach (var item in Model)
+        {
+            <option value="@item.Name"><i class="fa fa-arrow-right" aria-hidden="true"></i>@item.NameVN</option>
+        }
+    }
+</select>
+
+<script>
+    function getProductByCategory() {
+        const name = document.getElementById('country1').value;
+        var info = ''
+        console.log('>>> click')
+        $.getJSON('https://localhost:44337/KiemTra/getProductByCategory?name=' + name, function (data) {
+            for (var i = 0; i < data.length; i++) {
+                info += `<div class="col-md-3 top_brand_left">
+            <div class="hover14 column">
+                <div class="agile_top_brand_left_grid">
+                    <div class="agile_top_brand_left_grid_pos">
+                        <img src="Content/images/offer.png" alt=" " class="img-responsive">
+                    </div>
+                    <div class="agile_top_brand_left_grid1">
+                        <figure>
+                            <div class="snipcart-item block">
+                                <div class="snipcart-thumb">
+                                    <a href="single.html"><img title=" " alt=" " src="Content/images/${data[i].Image}"></a>
+                                    <p>${data[i].Name}</p>
+                                    <h4>${data[i].UnitPrice}</h4>
+                                </div>
+                                <div class="snipcart-details top_brand_home_details">
+                                    <form action="#" method="post">
+                                        <fieldset>
+                                            <input type="submit" name="submit" value="Add to cart" class="button">
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>`
+            }
+            $('#listProduct').html(info);
+        });
+    }
+</script>

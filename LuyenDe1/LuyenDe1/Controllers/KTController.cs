@@ -48,5 +48,10 @@ namespace LuyenDe1.Controllers
             return Json(res, JsonRequestBehavior.AllowGet);
         }
 
+        public PartialViewResult SignUp()
+        {
+            return PartialView();
+        }
+
     }
 }

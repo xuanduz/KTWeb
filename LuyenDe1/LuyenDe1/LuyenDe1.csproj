@@ -274,6 +274,7 @@
     <Content Include="Views\KT\Index.cshtml" />
     <Content Include="Views\KT\DropDown.cshtml" />
     <Content Include="Views\KT\ListProduct.cshtml" />
+    <Content Include="Views\KT\SignUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,43 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Shopping</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Super Market, Online Shopping" />
+
+    <!-- //for-mobile-apps -->
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/jquery-ui-1.css">
+    <!-- font-awesome icons -->
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script src="~/Scripts/js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+</head>
+	
+<body>
+    @*header*@
+    @Html.Partial("NXD_Header")
+
+    @RenderBody()
+
+    @*main-navigation*@
+    @Html.Partial("NXD_MainNavigation")
+
+    @*Filter*@
+    @Html.Partial("NXD_Filter")
+
+    @*NXD_MainContent*@
+    @Html.Partial("NXD_MainContent")
+
+    @Html.Partial("SignUp")
+
+    @Html.Partial("NXD_Footer")
+
+</body>
+</html>
