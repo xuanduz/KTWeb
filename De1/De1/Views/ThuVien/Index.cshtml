@@ -1,0 +1,47 @@
+﻿@model List<De1.Models.tSach>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Home</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã sách</th>
+            <th>Tên sách</th>
+            <th>Ngôn ngữ</th>
+            <th>Tác giả</th>
+            <th>Anh</th>
+            <th>Giới thiệu</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="Sach">
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MaSach</td>
+                    <td>@item.TenSach</td>
+                    <td>@item.tNgonNgu.TenNgonNgu</td>
+                    <td>@item.TacGia</td>
+                    <td><img src="~/Images/@item.FileAnh" width="50px" height="50px" /></td>
+                    <td>@item.GioiThieu</td>
+                    <th><a href="/ThuVien/Edit/@item.MaSach" class="btn btn-primary">Edit</a></th>
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>
+
+<script>
+    document.getElementById('btnSubmit').addEventListener('click', function (e) {
+        console.log('>>> click ', e);
+        e.preventDefault();
+        return true;
+    });
+</script>

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CSDLThuVien" Class="ThuVienDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-C1PHLHJ\SQLEXPRESS;Initial Catalog=CSDLThuVien;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CSDLThuVienConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tBanSaoSach" Member="tBanSaoSaches">
+    <Type Name="tBanSaoSach">
+      <Column Name="MaBanSao" Type="System.String" DbType="Char(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaSach" Type="System.String" DbType="Char(25)" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TinhTrangSach" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ViTri" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="tBanSaoSach_tMuonTra" Member="tMuonTras" ThisKey="MaBanSao" OtherKey="MaBanSao" Type="tMuonTra" />
+      <Association Name="tSach_tBanSaoSach" Member="tSach" ThisKey="MaSach" OtherKey="MaSach" Type="tSach" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tTheLoai" Member="tTheLoais">
+    <Type Name="tTheLoai">
+      <Column Name="MaTheLoai" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTheLoai" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="tTheLoai_tSach" Member="tSaches" ThisKey="MaTheLoai" OtherKey="MaTheLoai" Type="tSach" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tDocGia" Member="tDocGias">
+    <Type Name="tDocGia">
+      <Column Name="MaDG" Type="System.String" DbType="Char(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoDem" Type="System.String" DbType="NVarChar(55)" CanBeNull="true" />
+      <Column Name="TenDG" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="SoCMND" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="MaDonVi" Type="System.String" DbType="Char(25)" CanBeNull="true" />
+      <Column Name="Ngaysinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaDT" Type="System.String" DbType="Char(25)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Anh" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
+      <Association Name="tDocGia_tTheDocGia" Member="tTheDocGias" ThisKey="MaDG" OtherKey="MaDG" Type="tTheDocGia" />
+      <Association Name="tDoiTuong_tDocGia" Member="tDoiTuong" ThisKey="MaDT" OtherKey="MaDT" Type="tDoiTuong" IsForeignKey="true" />
+      <Association Name="tDonVi_tDocGia" Member="tDonVi" ThisKey="MaDonVi" OtherKey="MaDonVi" Type="tDonVi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tDoiTuong" Member="tDoiTuongs">
+    <Type Name="tDoiTuong">
+      <Column Name="MaDT" Type="System.String" DbType="Char(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenDoiTuong" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Association Name="tDoiTuong_tDocGia" Member="tDocGias" ThisKey="MaDT" OtherKey="MaDT" Type="tDocGia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tDonVi" Member="tDonVis">
+    <Type Name="tDonVi">
+      <Column Name="MaDonVi" Type="System.String" DbType="Char(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenDonVi" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Association Name="tDonVi_tDocGia" Member="tDocGias" ThisKey="MaDonVi" OtherKey="MaDonVi" Type="tDocGia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tLoaiSach" Member="tLoaiSaches">
+    <Type Name="tLoaiSach">
+      <Column Name="MaLoai" Type="System.String" DbType="Char(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(155)" CanBeNull="true" />
+      <Association Name="tLoaiSach_tSach" Member="tSaches" ThisKey="MaLoai" OtherKey="MaLoai" Type="tSach" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tMuonTra" Member="tMuonTras">
+    <Type Name="tMuonTra">
+      <Column Name="MaThe" Type="System.String" DbType="Char(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaBanSao" Type="System.String" DbType="Char(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DatCoc" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NgayMuon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayPhaiTra" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayTra" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TinhTrangSach" Type="System.String" DbType="NVarChar(155)" CanBeNull="true" />
+      <Column Name="Phat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="tBanSaoSach_tMuonTra" Member="tBanSaoSach" ThisKey="MaBanSao" OtherKey="MaBanSao" Type="tBanSaoSach" IsForeignKey="true" />
+      <Association Name="tTheDocGia_tMuonTra" Member="tTheDocGia" ThisKey="MaThe" OtherKey="MaThe" Type="tTheDocGia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tNgonNgu" Member="tNgonNgus">
+    <Type Name="tNgonNgu">
+      <Column Name="MaNgonNgu" Type="System.String" DbType="Char(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenNgonNgu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tNgonNgu_tSach" Member="tSaches" ThisKey="MaNgonNgu" OtherKey="MaNgonNgu" Type="tSach" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tNhaXB" Member="tNhaXBs">
+    <Type Name="tNhaXB">
+      <Column Name="MaNXB" Type="System.String" DbType="Char(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenNXB" Type="System.String" DbType="NVarChar(155)" CanBeNull="true" />
+      <Association Name="tNhaXB_tSach" Member="tSaches" ThisKey="MaNXB" OtherKey="MaNXB" Type="tSach" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tSach" Member="tSaches">
+    <Type Name="tSach">
+      <Column Name="MaSach" Type="System.String" DbType="Char(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NVarChar(155)" CanBeNull="true" />
+      <Column Name="MaLoai" Type="System.String" DbType="Char(25)" CanBeNull="true" />
+      <Column Name="MaNgonNgu" Type="System.String" DbType="Char(25)" CanBeNull="true" />
+      <Column Name="MaNXB" Type="System.String" DbType="Char(25)" CanBeNull="true" />
+      <Column Name="TacGia" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="NamXB" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="LanXB" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="TomTat" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TongSoTrang" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="Tap" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="TongSoTap" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="GiaTriSach" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FileAnh" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="MaTheLoai" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="GioiThieu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tSach_tBanSaoSach" Member="tBanSaoSaches" ThisKey="MaSach" OtherKey="MaSach" Type="tBanSaoSach" />
+      <Association Name="tLoaiSach_tSach" Member="tLoaiSach" ThisKey="MaLoai" OtherKey="MaLoai" Type="tLoaiSach" IsForeignKey="true" />
+      <Association Name="tNgonNgu_tSach" Member="tNgonNgu" ThisKey="MaNgonNgu" OtherKey="MaNgonNgu" Type="tNgonNgu" IsForeignKey="true" />
+      <Association Name="tNhaXB_tSach" Member="tNhaXB" ThisKey="MaNXB" OtherKey="MaNXB" Type="tNhaXB" IsForeignKey="true" />
+      <Association Name="tTheLoai_tSach" Member="tTheLoai" ThisKey="MaTheLoai" OtherKey="MaTheLoai" Type="tTheLoai" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tTheDocGia" Member="tTheDocGias">
+    <Type Name="tTheDocGia">
+      <Column Name="MaThe" Type="System.String" DbType="Char(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaDG" Type="System.String" DbType="Char(25)" CanBeNull="true" />
+      <Column Name="NgayBatDau" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayKhoaThe" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tTheDocGia_tMuonTra" Member="tMuonTras" ThisKey="MaThe" OtherKey="MaThe" Type="tMuonTra" />
+      <Association Name="tDocGia_tTheDocGia" Member="tDocGia" ThisKey="MaDG" OtherKey="MaDG" Type="tDocGia" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

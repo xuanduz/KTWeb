@@ -1,0 +1,27 @@
+﻿@model List<De1.Models.tNgonNgu>
+
+@{ 
+    foreach(var item in Model)
+            {
+                <li><a onclick="getBookByLanguage('@item.TenNgonNgu')">@item.TenNgonNgu</a></li>
+            }
+}
+<script>
+    function getBookByLanguage(ngonNgu) {
+        var table = ''
+        $.getJSON('https://localhost:44379/ThuVien/SachTheoNgonNgu?NgonNgu=' + ngonNgu, function (data) {
+            for (var i = 0; i < data.length; i++) {
+                table += '<tr>'
+                table += '<td>' + data[i].MaSach + '</td>'
+                table += '<td>' + data[i].TenSach + '</td>'
+                table += '<td>' + data[i].NgonNgu + '</td>'
+                table += '<td>' + data[i].TacGia + '</td>'
+                table += '<td><img src="/Images/' + data[i].Anh + '"/></td>'
+                table += '<td>' + data[i].GioiThieu + '</td>'
+                table += '</tr>'
+            }
+            $('#Sach').html(table);
+        });
+    }
+
+</script>

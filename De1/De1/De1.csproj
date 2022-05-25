@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AACD9CD7-C906-4A1A-AC09-1966C55A1414}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>De1</RootNamespace>
+    <AssemblyName>De1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44379</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ThuVienController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ThuVien.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThuVien.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\11414_chuyen-de-thiet-ke-web-voi-photoshop-cs.jpg" />
+    <Content Include="Images\12279_huong-dan-su-dung-visual-lisp-2007-danh-cho-nguoi-moi-bat-dau-.jpg" />
+    <Content Include="Images\12352_lap-trinh-java-nang-cao.jpg" />
+    <Content Include="Images\13874_tu-hoc-frontpage2003-trong-10-tieng.jpg" />
+    <Content Include="Images\14093_101-buoc-thiet-ke-trang-web-trong-10-tieng.jpg" />
+    <Content Include="Images\14166_95-bai-toan-va-giai-phap-go-roi-java.jpg" />
+    <Content Include="Images\141962_bi-quyet-hoc-nhanh-nho-lau.jpg" />
+    <Content Include="Images\14618_hoc-nhanh-flash-8-co-cd-rom-kem-theo-sach.jpg" />
+    <Content Include="Images\14631_cac-thu-thuat-trong-html-va-thiet-ke-web.jpg" />
+    <Content Include="Images\14634_xml-nen-tang-ung-dung.jpg" />
+    <Content Include="Images\14739_su-dung-dhtml-va-css-thiet-ke-web-dong.jpg" />
+    <Content Include="Images\14913_macromedia-dreamweaver-8-phan-co-ban-tap-2.jpg" />
+    <Content Include="Images\14914_macromedia-dreamweaver-8-phan-co-ban-tap-1.jpg" />
+    <Content Include="Images\15138_tu-hoc-lap-trinh-web-voi-php-trong-10-tieng.jpg" />
+    <Content Include="Images\15156_tu-hoc-javascript-trong-10-tieng.jpg" />
+    <Content Include="Images\152254_huong-dan-thuc-hanh-khac-phuc-su-co-va-toi-uu-hoa-microsoft-windows-8.jpg" />
+    <Content Include="Images\152256_huong-dan-thuc-hanh-microsoft-windows-8-don-gian-va-de-hieu.jpg" />
+    <Content Include="Images\15531_thuc-hanh-thiet-ke-web-chuyen-nghiep-bang-microsoft-frontpage-2003.jpg" />
+    <Content Include="Images\155541_doc-vi-bat-ky-ai.jpg" />
+    <Content Include="Images\15560_kham-pha-windows-xp-danh-cho-nguoi-moi-bat-dau.jpg" />
+    <Content Include="Images\155967_huan-luyen-ki-nang-ban-hang.jpg" />
+    <Content Include="Images\157170_nuoi-con-khong-phai-la-cuoc-chien.jpg" />
+    <Content Include="Images\16954_cac-giai-phap-lap-trinh-aspnet-20-tap-1.jpg" />
+    <Content Include="Images\16959_cac-giai-phap-lap-trinh-visual-basic-net-tap-1-dung-kem-dia.jpg" />
+    <Content Include="Images\16960_cac-giai-phap-lap-trinh-visual-basic-net-tap-2-dung-kem-dia.jpg" />
+    <Content Include="Images\16966_cac-giai-phap-lap-trinh-c-dung-kem-dia.jpg" />
+    <Content Include="Images\17044_thu-thuat-lap-trinh-java-dung-kem-dia.jpg" />
+    <Content Include="Images\17142_-2005-tap-5-lap-trinh-aspnet-20-quyen-3-dieu-khien-ket-noi-co-so-du-lieu-co-cd.jpg" />
+    <Content Include="Images\17143_tuyen-tap-thu-thuat-javascript-tap-2.jpg" />
+    <Content Include="Images\17144_tuyen-tap-thu-thuat-javascript-tap-1.jpg" />
+    <Content Include="Images\17146_visual-basic-2005-tap-3-quyen-2-lap-trinh-web-voi-co-so-du-lieu-kem-cd-bai-tap.jpg" />
+    <Content Include="Images\17150_tu-hoc-thiet-ke-web-tap-2.jpg" />
+    <Content Include="Images\17193_php-va-ung-dung-web-nguon-mo-tap-1-blog.jpg" />
+    <Content Include="Images\17223_thiet-ke-website-voi-cong-cu-ho-tro-truc-tuyen.jpg" />
+    <Content Include="Images\17263_xay-dung-website-voi-dreamwaver-8.jpg" />
+    <Content Include="Images\17571_macromedia-dreamweaver-8-phan-nang-cao.jpg" />
+    <Content Include="Images\17572_c-2005-tap-5-lap-trinh-aspnet-quyen-4-doi-tuong-adonet-20-va-xml-co-cd-kem-theo.jpg" />
+    <Content Include="Images\17574_tu-hoc-thiet-ke-web-tap-1-dung-kem-dia-cd.jpg" />
+    <Content Include="Images\17580_c-2005-tap-5-lap-trinh-aspnet-20-quyen-3-dieu-khien-ket-noi-co-so-du-lieu-co-cd.jpg" />
+    <Content Include="Images\17607_xay-dung-forum-voi-webwizforum.jpg" />
+    <Content Include="Images\17633_tu-hoc-thiet-ke-web.jpg" />
+    <Content Include="Images\17722_hoc-thiet-ke-web-bang-hinh-minh-hoa-tap-2.jpg" />
+    <Content Include="Images\18261_thu-thuat-windows-xp.jpg" />
+    <Content Include="Images\206668_thuong-kinh-ky-su.jpg" />
+    <Content Include="Images\212483_mong-kinh-su.jpg" />
+    <Content Include="Images\222227_cau-chuyen-ben-noi-lau.jpg" />
+    <Content Include="Images\222490_combo-hillary-clinton-bi-mat-quoc-gia-va-su-hoi-sinh-donald-j-trump-da-den-luc.jpg" />
+    <Content Include="Images\223405_donald-trump-tro-lo-truyen-thong-hay-bo-oc-vi-dai.jpg" />
+    <Content Include="Images\225865_nui-xanh-nay-van-do.jpg" />
+    <Content Include="Images\226200_loi-tua-mot-tinh-yeu.jpg" />
+    <Content Include="Images\226685_chuyen-nha-bong-bom-bach.jpg" />
+    <Content Include="Images\227063_yeu-con-nhu-nang-xuan.jpg" />
+    <Content Include="Images\22780_108-thu-thuat-tu-lam-chu-windows-vista.jpg" />
+    <Content Include="Images\228637_dac-nhan-tam-tai-ban-2016.jpg" />
+    <Content Include="Images\228645_ngay-xua-co-mot-chuyen-tinh-bia-mem-kem-qua-tang.jpg" />
+    <Content Include="Images\230308_mua-he-nam-ay.jpg" />
+    <Content Include="Images\234109_tuoi-tre-dang-gia-bao-nhieu.jpg" />
+    <Content Include="Images\236459_cuoc-song-thuong-luu-cua-hoang-de-meo.jpg" />
+    <Content Include="Images\237369_dan-ba-hu-ao.jpg" />
+    <Content Include="Images\23862_huong-dan-hoc-windows-xp-can-ban.jpg" />
+    <Content Include="Images\238977_ve-dau-nhung-vet-thuong.jpg" />
+    <Content Include="Images\243526_ngoai-bo-dong-la-mat-troi.jpg" />
+    <Content Include="Images\245453_hoang-le-nhat-thong-chi-dien-nghia.jpg" />
+    <Content Include="Images\246166_loi-song-toi-gian-cua-nguoi-nhat.jpg" />
+    <Content Include="Images\248142_leu-chong.jpg" />
+    <Content Include="Images\251785_guong-sang-nguoi-xua-bien-cuong-vung-chac-xa-tac-dai-lau.jpg" />
+    <Content Include="Images\254304_thanh-tong-di-thao.jpg" />
+    <Content Include="Images\256862_viet-su-nhung-guong-mat-phan-dien.jpg" />
+    <Content Include="Images\258204_nguoi-quan-tuong-cua-vua-quang-trung.jpg" />
+    <Content Include="Images\270445_thien-ha-chi-vuong.jpg" />
+    <Content Include="Images\270454_vu-tich.jpg" />
+    <Content Include="Images\270796_power-course-english-in-4-weeks-thong-thao-tieng-anh-chi-trong-4-tuan-kem-1-cd.jpg" />
+    <Content Include="Images\271456_ho-duong-tap-1-ngay-ve-gia-dinh.jpg" />
+    <Content Include="Images\271471_ho-duong-tap-2-nam-bac-dai-thong.jpg" />
+    <Content Include="Images\271697_cu-hich-tai-ban-2017.jpg" />
+    <Content Include="Images\271751_barrons-600-essential-words-for-the-toeic-kem-2-cd-tai-ban-2016.jpg" />
+    <Content Include="Images\271842_bo-flashcards-600-essential-words-for-the-toeic-tai-ban-2017.jpg" />
+    <Content Include="Images\271940_bai-tap-ngu-phap-tieng-anh-co-ban-danh-cho-hoc-sinh-quyen-5.jpg" />
+    <Content Include="Images\271949_bai-tap-ngu-phap-tieng-anh-co-ban-danh-cho-hoc-sinh-quyen-6.jpg" />
+    <Content Include="Images\271958_bai-tap-ngu-phap-tieng-anh-co-ban-danh-cho-hoc-sinh-quyen-2.jpg" />
+    <Content Include="Images\271969_bai-tap-ngu-phap-tieng-anh-co-ban-danh-cho-hoc-sinh-quyen-3.jpg" />
+    <Content Include="Images\272080_con-khong-ngoc-con-chi-thong-minh-theo-mot-cach-khac-tai-ban-2017.jpg" />
+    <Content Include="Images\272270_listening-strategies-for-the-ielts-test-book-2-kem-1-cd.jpg" />
+    <Content Include="Images\272279_listening-strategies-for-the-ielts-test-book-1-kem-1-cd.jpg" />
+    <Content Include="Images\272302_bai-tap-ngu-phap-tieng-anh-co-ban-danh-cho-hoc-sinh-quyen-1.jpg" />
+    <Content Include="Images\272304_bai-tap-ngu-phap-tieng-anh-co-ban-danh-cho-hoc-sinh-quyen-4.jpg" />
+    <Content Include="Images\273513_cham-soc-suc-khoe-tre-em-tap-1-sua-me-sua-cong-thuc.jpg" />
+    <Content Include="Images\274341_bai-tap-bo-tro-ky-nang-viet-tieng-anh.jpg" />
+    <Content Include="Images\274350_cac-dang-bai-tap-chua-loi-sai-tieng-anh.jpg" />
+    <Content Include="Images\274359_120-bai-luan-tieng-anh.jpg" />
+    <Content Include="Images\274379_hoan-thien-ky-nang-phat-am-va-danh-dau-trong-am-tieng-anh.jpg" />
+    <Content Include="Images\274611_3-nguoi-thay-vi-dai.jpg" />
+    <Content Include="Images\274616_mind-map-english-hoc-tieng-anh-theo-so-do-tu-duy-kem-1-cd.jpg" />
+    <Content Include="Images\274618_forgotten-english-conversation-tieng-anh-ngoai-lop-hoc-kem-1-cd.jpg" />
+    <Content Include="Images\274636_luyen-thi-toeic-750-reading-tai-ban-2017.jpg" />
+    <Content Include="Images\275018_ba-me-oi-con-bi-bat-nat.jpg" />
+    <Content Include="Images\275185_con-gai-cua-me.jpg" />
+    <Content Include="Images\275187_nu-hon-tu-than-phan-4-series-tho-san-dem.jpg" />
+    <Content Include="Images\275246_tren-duong-bang-tai-ban-2017.jpg" />
+    <Content Include="Images\275589_khien-nguoi-khac-thay-doi-suy-nghi.jpg" />
+    <Content Include="Images\275713_cung-con-chao-lop-1.jpg" />
+    <Content Include="Images\275764_toeic-analyst-second-edition-kem-3-cd-tai-ban-2015.jpg" />
+    <Content Include="Images\275807_bi-quyet-luyen-thi-ielts-kem-1-cd-tai-ban-92017.jpg" />
+    <Content Include="Images\275857_outlander-chuon-chuon-ho-phach-tap-2.jpg" />
+    <Content Include="Images\275986_co-gai-vuot-thoi-gian-tang-kem-so-tay.jpg" />
+    <Content Include="Images\276019_den-thuong-de-cung-phai-dong-y.jpg" />
+    <Content Include="Images\276030_grammar-is-not-boring-ngu-phap-khong-te-nhat.jpg" />
+    <Content Include="Images\276091_con-bo-tia-tai-ban-2017.jpg" />
+    <Content Include="Images\276103_me-binh-thuong-day-con-uu-tu.jpg" />
+    <Content Include="Images\276191_ibosses-thu-linh-so-the-he-y.jpg" />
+    <Content Include="Images\276245_do-the-math-lam-toan-trinh-do-1-tap-2-kem-1-cd.jpg" />
+    <Content Include="Images\276259_dao-nguoc.jpg" />
+    <Content Include="Images\276268_days-and-nights-ngay-va-dem-trinh-do-1-tap-1-kem-1-cd.jpg" />
+    <Content Include="Images\276284_khoi-nghiep-doi-moi-sang-tao-tu-duy-cong-cu.jpg" />
+    <Content Include="Images\276320_tam-trieu-vua-ly-hop-4-cuon-tai-ban-2017.jpg" />
+    <Content Include="Images\276321_biet-doi-blockbusters-bi-an-buc-tranh-cua-picasso.jpg" />
+    <Content Include="Images\276338_khong-noi-nuong-tua-tai-ban-2017.jpg" />
+    <Content Include="Images\276340_fujiko-f-fujio-dai-tuyen-tap-doraemon-truyen-dai-tap-2.jpg" />
+    <Content Include="Images\276342_yu-gi-oh-tap-26.jpg" />
+    <Content Include="Images\31231_huong-dan-mua-linh-kien-cach-su-dung-may-laptop-tap-2.jpg" />
+    <Content Include="Images\31232_huong-dan-mua-linh-kien-cach-su-dung-may-laptop-tap-1.jpg" />
+    <Content Include="Images\31498_tu-khac-phuc-may-tinh-khi-bi-vi-rut-tan-cong.jpg" />
+    <Content Include="Images\31501_tu-hoc-nhanh-windows-xp.jpg" />
+    <Content Include="Images\33102_180-thu-thuat-va-meo-hay-trong-window-7.jpg" />
+    <Content Include="Images\33106_cach-cai-dat-va-su-dung-can-ban-nhat-windows-7.jpg" />
+    <Content Include="Images\33447_tu-hoc-lap-rap-va-sua-chua-may-tinh.jpg" />
+    <Content Include="Images\35419_tu-hoc-xu-ly-su-co-thuong-gap-tren-may-vi-tinh.jpg" />
+    <Content Include="Images\44551_huong-dan-su-dung-microsoft-windows-7-professional-toan-tap.jpg" />
+    <Content Include="Images\49206_comptia-a-huong-dan-ve-phan-cung-quan-ly-bao-tri-va-xu-ly-su-co-phien-ban-lan-5.jpg" />
+    <Content Include="Images\image1.jpg" />
+    <Content Include="Images\image10.jpg" />
+    <Content Include="Images\image11.jpg" />
+    <Content Include="Images\image12.jpg" />
+    <Content Include="Images\image13.jpg" />
+    <Content Include="Images\image14.jpg" />
+    <Content Include="Images\image15.jpg" />
+    <Content Include="Images\image16.jpg" />
+    <Content Include="Images\image17.jpg" />
+    <Content Include="Images\image18.jpg" />
+    <Content Include="Images\image19.jpg" />
+    <Content Include="Images\image2.jpg" />
+    <Content Include="Images\image20.jpg" />
+    <Content Include="Images\image21.jpg" />
+    <Content Include="Images\image22.jpg" />
+    <Content Include="Images\image23.jpg" />
+    <Content Include="Images\image24.jpg" />
+    <Content Include="Images\image25.jpg" />
+    <Content Include="Images\image26.jpg" />
+    <Content Include="Images\image27.jpg" />
+    <Content Include="Images\image28.jpg" />
+    <Content Include="Images\image29.jpg" />
+    <Content Include="Images\image3.jpg" />
+    <Content Include="Images\image30.jpg" />
+    <Content Include="Images\image31.jpg" />
+    <Content Include="Images\image32.jpg" />
+    <Content Include="Images\image33.jpg" />
+    <Content Include="Images\image34.jpg" />
+    <Content Include="Images\image35.jpg" />
+    <Content Include="Images\image36.jpg" />
+    <Content Include="Images\image37.jpg" />
+    <Content Include="Images\image38.jpg" />
+    <Content Include="Images\image39.jpg" />
+    <Content Include="Images\image4.jpg" />
+    <Content Include="Images\image40.jpg" />
+    <Content Include="Images\image41.jpg" />
+    <Content Include="Images\image42.jpg" />
+    <Content Include="Images\image43.jpg" />
+    <Content Include="Images\image44.jpg" />
+    <Content Include="Images\image45.jpg" />
+    <Content Include="Images\image46.jpg" />
+    <Content Include="Images\image47.jpg" />
+    <Content Include="Images\image48.jpg" />
+    <Content Include="Images\image49.jpg" />
+    <Content Include="Images\image5.jpg" />
+    <Content Include="Images\image50.jpg" />
+    <Content Include="Images\image51.jpg" />
+    <Content Include="Images\image52.jpg" />
+    <Content Include="Images\image6.jpg" />
+    <Content Include="Images\image7.jpg" />
+    <Content Include="Images\image8.jpg" />
+    <Content Include="Images\image9.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Models\ThuVien.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ThuVien.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Models\ThuVien.dbml.layout">
+      <DependentUpon>ThuVien.dbml</DependentUpon>
+    </None>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\ThuVien\Index.cshtml" />
+    <Content Include="Views\ThuVien\NgonNguPartial.cshtml" />
+    <Content Include="Views\ThuVien\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55413</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44379/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
