@@ -1,0 +1,64 @@
+﻿@model List<LuyenDe1.Models.Category>
+
+<div class="sorting-left">
+    <select id="country1" onchange="getProductByCategory()" class="frm-field required sect">
+        <option value="all"><i class="fa fa-arrow-right" aria-hidden="true"></i>Tất cả</option>
+        @{
+            foreach (var item in Model)
+            {
+                <option value="@item.Name" onclick="getProductByCategory()">@item.NameVN</option>
+            }
+        }
+    </select>
+</div>
+
+<script>
+    function getProductByCategory() {
+        const name = document.getElementById('country1').value;
+        var info = ''
+        if (name === 'all') {
+
+        }
+        $.getJSON('https://localhost:44313/KT/getProductByCategory?name=' + name, function (data) {
+            for (var i = 0; i < data.length; i++) {
+                info += `<div class="col-md-3 top_brand_left">
+                <div class="hover14 column">
+                    <div class="agile_top_brand_left_grid">
+                        <div class="agile_top_brand_left_grid_pos">
+                            <img src="/Content/images/offer.png" alt=" " class="img-responsive">
+                        </div>
+                        <div class="agile_top_brand_left_grid1">
+                            <figure>
+                                <div class="snipcart-item block">
+                                    <div class="snipcart-thumb">`
+                info += ` <a href="single.html"><img title=" " alt=" " src="/Content/images/${data[i].Image}"></a>`
+                info += `<p>${data[i].Name}</p> <h4>$${data[i].UnitPrice}</h4>`
+                info += `</div>
+                                    <div class="snipcart-details top_brand_home_details">
+                                        <form action="#" method="post">
+                                            <fieldset>
+                                                <input type="submit" name="submit" value="Add to cart" class="button">
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+                //table += '<tr>'
+                //table += '<td>' + data[i].MaSach + '</td>'
+                //table += '<td>' + data[i].TenSach + '</td>'
+                //table += '<td>' + data[i].NgonNgu + '</td>'
+                //table += '<td>' + data[i].TacGia + '</td>'
+                //table += '<td><img src="/Images/' + data[i].Anh + '"/></td>'
+                //table += '<td>' + data[i].GioiThieu + '</td>'
+                //table += '</tr>'
+            }
+            //console.log('>>> cehck info ', data)
+            $('#container').html(info);
+        });
+    }
+
+</script>
